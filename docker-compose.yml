@@ -126,6 +126,17 @@ services:
       retries: 3
       timeout: 5s
 
+  redis-insight:
+    container_name: redisinsight
+    ports:
+      - "5540:5540"
+    image: redis/redisinsight:latest
+    command: -v redisinsight:/data
+    volumes:
+      - 'sail-redis-insight:/data'
+    networks:
+      - sail
+
 #  mailpit:
 #      image: 'axllent/mailpit:latest'
 #      restart: on-failure
@@ -160,4 +171,6 @@ volumes:
   sail-minio:
     driver: local
   sail-meilisearch:
+    driver: local
+  sail-redis-insight:
     driver: local
