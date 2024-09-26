@@ -131,6 +131,7 @@ services:
     ports:
       - "5540:5540"
     image: redis/redisinsight:latest
+    restart: on-failure
     command: -v redisinsight:/data
     volumes:
       - 'sail-redis-insight:/data'
