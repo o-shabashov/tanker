@@ -104,6 +104,13 @@ services:
       retries: 3
       timeout: 5s
 
+  meilisearch-dashboard:
+    container_name: 'meilisearch-dashboard'
+    image: 'riccoxie/meilisearch-ui:latest'
+    restart: on-failure
+    ports:
+      - "24900:24900"
+
   redis-insight:
     container_name: redisinsight
     ports:
@@ -115,25 +122,6 @@ services:
       - 'sail-redis-insight:/data'
     networks:
       - sail
-
-#  mailpit:
-#      image: 'axllent/mailpit:latest'
-#      restart: on-failure
-#      ports:
-#          - '${FORWARD_MAILPIT_PORT:-1025}:1025'
-#          - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
-#      networks:
-#          - sail
-#
-#  selenium:
-#      image: seleniarm/standalone-chromium
-#      restart: on-failure
-#      extra_hosts:
-#          - 'host.docker.internal:host-gateway'
-#      volumes:
-#          - '/dev/shm:/dev/shm'
-#      networks:
-#          - sail
 
 networks:
   sail:
