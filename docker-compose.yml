@@ -66,7 +66,7 @@ services:
 
   typesense:
     container_name: 'typesense'
-    image: 'typesense/typesense:26.0'
+    image: 'typesense/typesense:27.1'
     restart: on-failure
     ports:
       - '8108:8108'
