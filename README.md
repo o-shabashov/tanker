@@ -11,7 +11,6 @@ A set of usefull services for the https://github.com/o-shabashov/cassie project:
 * Typesense dashboard
 * Meilisearch
 * Meilisearch dashboard
-* Nginx-proxy
 * Searxng
 
 ## Install
