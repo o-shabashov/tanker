@@ -123,17 +123,6 @@ services:
     networks:
       - sail
 
-  nginx-proxy:
-    container_name: 'nginx-proxy'
-    ports:
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-    networks:
-      - nginx-proxy
-      - sail
-    image: nginxproxy/nginx-proxy:1.6
-
   searxng:
     image: searxng/searxng
     ports:
@@ -149,9 +138,6 @@ networks:
   sail:
     name: sail
     driver: bridge
-  nginx-proxy:
-    external: true
-    name: nginx-proxy
 
 volumes:
   sail-pgsql:
