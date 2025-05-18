@@ -123,17 +123,6 @@ services:
     networks:
       - sail
 
-  searxng:
-    image: searxng/searxng
-    ports:
-      - "32768:8080"
-    volumes:
-      - ${PWD}/searxng:/etc/searxng
-    environment:
-      BASE_URL: "http://localhost:8080/"
-      INSTANCE_NAME: "my-instance"
-    restart: always
-
 networks:
   sail:
     name: sail
